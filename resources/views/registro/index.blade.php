@@ -99,7 +99,7 @@
             </div>
             <div class="mt-5 flex justify-evenly items-center">
                 <a href="{{ route('actualizar.index') }}" class="text-sm text-sky-500 hover:text-sky-800">Cambiar password</a>
-                <a href="{{ route('login') }}" class="text-sm text-sky-500 hover:text-sky-800">Inicia Sesión</a>
+                <a href="{{ route('login') }}" class="text-sm text-sky-500 hover:text-sky-800">Crear Cuenta</a>
             </div>
 
         </form>

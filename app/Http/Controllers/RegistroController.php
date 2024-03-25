@@ -29,7 +29,6 @@ class RegistroController extends Controller
             'password' => Hash::make( $request->password ),
             'admin' => $request->email === 'domingocurbeira@gmail.com' ? '1' : '0',
             'url' => Str::uuid(),
-            'confirmado' => '1',
         ]);
 
         // Otra forma de autenticar
