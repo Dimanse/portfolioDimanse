@@ -28,7 +28,6 @@ class RegistroController extends Controller
             'email' => $request->email,
             'password' => Hash::make( $request->password ),
             'admin' => $request->email === 'domingocurbeira@gmail.com' ? '1' : '0',
-            'url' => Str::uuid(),
         ]);
 
         // Otra forma de autenticar
@@ -36,6 +35,6 @@ class RegistroController extends Controller
 
 
         // Redireccionar
-        return redirect()->route('curriculum.index', auth()->user()->url );
+        return redirect()->route('curriculum.index' );
     }
 }

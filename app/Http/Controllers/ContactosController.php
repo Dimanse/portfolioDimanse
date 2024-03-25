@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Correo;
+use App\Models\Contacto;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
-class ContactoController extends Controller
+class ContactosController extends Controller
 {
     //
-
 
     public function create(User $user)
     {
@@ -19,11 +18,14 @@ class ContactoController extends Controller
             return redirect()->route('login');
         }
 
-        $correos = Correo::all();
+        $contactos = Contacto::all();
+        if(!$contactos){
+            return redirect()->route('curriculum.index');
+        }
         // dd($usuario);
         // dd('Mostrando formulario');
         return view('contacto.create', [
-            'correos' => $correos,
+            'contactos' => $contactos,
             // 'usuario' => $usuario,
         ]);
     }
@@ -42,7 +44,7 @@ class ContactoController extends Controller
          ]);
 
          // Guardamos cada uno de los campos del formulario en la base de datos
-         Correo::create([
+         Contacto::create([
              'name' => $request->name,
              'email' => $request->email,
              'asunto' => $request->asunto,
@@ -54,7 +56,7 @@ class ContactoController extends Controller
 
     }
 
-    public function show(Correo $correo)
+    public function show(Contacto $contacto)
     {
 
         // dd(auth()->user());
@@ -67,16 +69,16 @@ class ContactoController extends Controller
         //     return redirect()->route('curriculum.index');
         // }
         return view('contacto.show', [
-            'correo' => $correo,
+            'contacto' => $contacto,
             // 'usuario' => $usuario,
         ]);
     }
 
-    public function destroy(Correo $correo)
+    public function destroy(Contacto $contacto)
     {
-        // dd($correo);
-        $correo->delete();
+        // dd($contacto);
+        $contacto->delete();
 
-        return redirect()->route('contacto.create');
+        return redirect()->route('contacto.show');
     }
 }

@@ -64,7 +64,10 @@
             />
             </div>
 
-
+            <div class="mt-5 flex justify-evenly items-center">
+                <a href="{{ route('login') }}" class="text-sm text-sky-500 hover:text-sky-800">Iniciar Sesión</a>
+                <a href="{{ route('registro.index') }}" class="text-sm text-sky-500 hover:text-sky-800">Registro</a>
+            </div>
         </form>
 
     </div>

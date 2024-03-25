@@ -93,13 +93,13 @@
 
                 <input
                 type="submit"
-                value="Iniciar Sesión"
+                value="Crear Cuenta"
                 class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
             />
             </div>
             <div class="mt-5 flex justify-evenly items-center">
                 <a href="{{ route('actualizar.index') }}" class="text-sm text-sky-500 hover:text-sky-800">Cambiar password</a>
-                <a href="{{ route('login') }}" class="text-sm text-sky-500 hover:text-sky-800">Crear Cuenta</a>
+                <a href="{{ route('login') }}" class="text-sm text-sky-500 hover:text-sky-800">Inicia Sesión</a>
             </div>
 
         </form>
